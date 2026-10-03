@@ -1,0 +1,44 @@
+17 ?- house = house.
+true.
+Reason: Both terms are the same atom, so unification succeeds.
+
+18 ?- house = abc.
+false.
+Reason: The atoms are different, so unification fails.
+
+19 ?- edge(a,b) = edge(C,b).
+C = a.
+Reason: C is unified with a, and b matches b.
+
+20 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+Reason: C is unified with a, and B is unified with d.
+
+21 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+Reason: C is unified with a, and B is unified with d.
+
+22 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+Reason: A is unified with a, and B is unified with f(g,h).
+
+23 ?- edge(A,A) = edge(b,c).
+false.
+Reason: A cannot be both b and c at the same time.
+
+24 ?- edge(A,A) = edge(b,b).
+A = b.
+Reason: Both occurrences of A can be unified with b.
+
+25 ?- A = B, B = f.
+A = B, B = f.
+Reason: A and B are linked, then B is unified with f.
+
+26 ?- A = B, B = f, A = e.
+false.
+Reason: A and B become linked to f, so A cannot also unify with e.
+
+27 ?- 
